@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agro e Forte - O Futuro do Campo</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background: #f1f8e9;
+        color: #1b3a2f;
+        transition: 0.3s;
+    }
+
+    body.dark {
+        background: #0f1f14;
+        color: #e8f5e9;
+    }
+
+    header {
+        background: linear-gradient(90deg, #1b5e20, #43a047);
+        color: white;
+        text-align: center;
+        padding: 25px;
+    }
+
+    nav {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        background: #2e7d32;
+    }
+
+    nav a {
+        color: white;
+        padding: 12px 18px;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        background: #1b5e20;
+    }
+
+    .hero {
+        height: 70vh;
+        background: url('https://images.unsplash.com/photo-1500595046743-cd271d694d30') center/cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        text-shadow: 2px 2px 10px black;
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .section {
+        padding: 60px 20px;
+        max-width: 1100px;
+        margin: auto;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 20px;
+    }
+
+    .card {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    body.dark .card {
+        background: #1b2e22;
+    }
+
+    button {
+        padding: 10px 15px;
+        border: none;
+        background: #43a047;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        background: #2e7d32;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: #1b5e20;
+        color: white;
+    }
+
+    .faq-item {
+        margin-bottom: 10px;
+        background: #ffffff;
+        padding: 12px;
+        border-radius: 8px;
+    }
+
+    body.dark .faq-item {
+        background: #1b2e22;
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    @media (max-width: 600px) {
+        .hero h1 {
+            font-size: 1.8rem;
+        }
+
+        nav a {
+            padding: 10px;
+            font-size: 14px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🌱 Agro e Forte</h1>
+    <p>O campo que alimenta o mundo</p>
+    <button onclick="toggleDark()">Modo Escuro</button>
+</header>
+
+<nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#historia">História</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#tecnologia">Tecnologia</a>
+    <a href="#sustentabilidade">Sustentabilidade</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contato">Contato</a>
+</nav>
+
+<div class="hero">
+    <div>
+        <h1>Agro é força, tecnologia e futuro</h1>
+        <p>Produzindo alimento com inovação</p>
+    </div>
+</div>
+
+<section class="section" id="sobre">
+    <h2>Sobre o Agro</h2>
+    <p>O agronegócio é um dos setores mais importantes da economia mundial, responsável pela produção de alimentos, energia e matérias-primas.</p>
+</section>
+
+<section class="section" id="historia">
+    <h2>História do Agro</h2>
+    <p>Da agricultura tradicional à agricultura digital com drones e IA, o setor evoluiu para aumentar produtividade e eficiência.</p>
+</section>
+
+<section class="section" id="servicos">
+    <h2>Serviços</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>🌾 Agricultura</h3>
+            <p>Produção de grãos como soja, milho e trigo.</p>
+        </div>
+
+        <div class="card">
+            <h3>🐄 Pecuária</h3>
+            <p>Criação de gado com alta tecnologia.</p>
+        </div>
+
+        <div class="card">
+            <h3>🚜 Máquinas</h3>
+            <p>Equipamentos modernos e inteligentes.</p>
+        </div>
+
+        <div class="card">
+            <h3>📊 Consultoria</h3>
+            <p>Planejamento estratégico rural.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="tecnologia">
+    <h2>Tecnologia no Campo</h2>
+    <p>Drones, sensores e IA estão transformando o agronegócio.</p>
+
+    <button onclick="infoTech()">Ver inovação</button>
+    <p id="tech"></p>
+</section>
+
+<section class="section" id="sustentabilidade">
+    <h2>Sustentabilidade</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>🌳 Reflorestamento</h3>
+            <p>Recuperação ambiental.</p>
+        </div>
+
+        <div class="card">
+            <h3>💧 Água</h3>
+            <p>Uso inteligente dos recursos hídricos.</p>
+        </div>
+
+        <div class="card">
+            <h3>♻️ Energia limpa</h3>
+            <p>Fontes renováveis no campo.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="faq">
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+        <strong>O que é agro?</strong>
+        <p>Setor de produção agrícola e pecuária.</p>
+    </div>
+
+    <div class="faq-item">
+        <strong>Usa tecnologia?</strong>
+        <p>Sim, agricultura digital e IA.</p>
+    </div>
+
+    <div class="faq-item">
+        <strong>É sustentável?</strong>
+        <p>Pode ser com boas práticas.</p>
+    </div>
+</section>
+
+<section class="section" id="contato">
+    <h2>Contato</h2>
+
+    <form onsubmit="enviar(event)">
+        <input type="text" placeholder="Seu nome" required>
+        <input type="email" placeholder="Seu email" required>
+        <textarea rows="5" placeholder="Sua mensagem"></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <p id="msg"></p>
+</section>
+
+<footer>
+    <p>© 2026 Agro e Forte</p>
+</footer>
+
+<script>
+    function toggleDark() {
+        document.body.classList.toggle("dark");
+
+        if (document.body.classList.contains("dark")) {
+            localStorage.setItem("theme", "dark");
+        } else {
+            localStorage.setItem("theme", "light");
+        }
+    }
+
+    function infoTech() {
+        document.getElementById("tech").innerText =
+            "A agricultura 4.0 usa IA, sensores e dados para aumentar produtividade.";
+    }
+
+    function enviar(e) {
+        e.preventDefault();
+        document.getElementById("msg").innerText =
+            "Mensagem enviada com sucesso!";
+    }
+
+    // manter tema salvo
+    (function () {
+        if (localStorage.getItem("theme") === "dark") {
+            document.body.classList.add("dark");
+        }
+    })();
+</script>
+
+</body>
+</html>
